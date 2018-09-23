@@ -1,4 +1,5 @@
 const udp = require('dgram');
+const ip = require('ip');
 var multicastAddress = '239.255.255.250';
 var multicastPort = '1900';
 
@@ -31,7 +32,7 @@ function listen(port, host) {
             console.log('dont respond because we dont belong to the desired service type...');
         }
 
-        else if (0 /* compare ip addresses*/) {
+        else if (ip.address() == rinfo.address) {
             console.log('ignore message because it was sent by us...');
         }
 
