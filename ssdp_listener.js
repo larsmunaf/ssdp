@@ -8,7 +8,7 @@ var mySSDPServiceType = 'ST: fridge';
 var ssdpListener = udp.createSocket('udp4');
 
 function listen(port, host) {
-    ssdpListener.bind(multicastPort, function () {
+    ssdpListener.bind(multicastPortnction () {
         ssdpListener.setBroadcast(true);
         ssdpListener.setMulticastTTL(1);
         ssdpListener.addMembership(multicastAddress); // only membership neeeded

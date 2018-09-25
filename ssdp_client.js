@@ -1,7 +1,4 @@
 /* TODO
-advertise each root device 3 times
-advertise each embedded service 2 times
-normal services only once
 !! use random intervals to minimize network traffic
 */
 
@@ -97,11 +94,8 @@ function search() {
         else {
             console.log('success: ' + res);
         }
-
-        setTimeout(function () {
-            client.close()
-        }, 5000);
     });
 }
 
-search();
+
+setInterval (search, Math.random() * (5000 - 4000) + 4000);
